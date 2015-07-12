@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		4C30FEB41B532404003EF659 /* CBGPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C30FEB31B532404003EF659 /* CBGPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C30FEBB1B532404003EF659 /* CBGPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30FEB01B532404003EF659 /* CBGPromise.framework */; };
-		4C30FEC01B532404003EF659 /* CBGPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30FEBF1B532404003EF659 /* CBGPromiseTests.swift */; };
 		4C30FEEF1B5324BC003EF659 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30FEDB1B5324AC003EF659 /* Quick.framework */; };
 		4C30FEF01B5324C0003EF659 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30FEE81B5324B0003EF659 /* Nimble.framework */; };
+		4C30FEF21B532746003EF659 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30FEF11B532746003EF659 /* Promise.swift */; };
+		4C872E941B5327A000D6B61C /* PromiseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C872E931B5327A000D6B61C /* PromiseSpec.swift */; };
+		4C872E971B5328E900D6B61C /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C872E961B5328E900D6B61C /* Future.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,10 +101,12 @@
 		4C30FEB31B532404003EF659 /* CBGPromise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBGPromise.h; sourceTree = "<group>"; };
 		4C30FEB51B532404003EF659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C30FEBA1B532404003EF659 /* CBGPromiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBGPromiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C30FEBF1B532404003EF659 /* CBGPromiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBGPromiseTests.swift; sourceTree = "<group>"; };
 		4C30FEC11B532404003EF659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C30FECB1B5324A9003EF659 /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Quick/Quick.xcodeproj; sourceTree = "<group>"; };
 		4C30FEE01B5324B0003EF659 /* Nimble.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nimble.xcodeproj; path = Nimble/Nimble.xcodeproj; sourceTree = "<group>"; };
+		4C30FEF11B532746003EF659 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		4C872E931B5327A000D6B61C /* PromiseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseSpec.swift; sourceTree = "<group>"; };
+		4C872E961B5328E900D6B61C /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 			children = (
 				4C30FEB31B532404003EF659 /* CBGPromise.h */,
 				4C30FEB51B532404003EF659 /* Info.plist */,
+				4C30FEF11B532746003EF659 /* Promise.swift */,
+				4C872E961B5328E900D6B61C /* Future.swift */,
 			);
 			path = CBGPromise;
 			sourceTree = "<group>";
@@ -157,8 +163,8 @@
 		4C30FEBE1B532404003EF659 /* CBGPromiseTests */ = {
 			isa = PBXGroup;
 			children = (
-				4C30FEBF1B532404003EF659 /* CBGPromiseTests.swift */,
 				4C30FEC11B532404003EF659 /* Info.plist */,
+				4C872E931B5327A000D6B61C /* PromiseSpec.swift */,
 			);
 			path = CBGPromiseTests;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 		4C30FEA71B532404003EF659 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = CBG;
 				TargetAttributes = {
@@ -386,6 +393,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C872E971B5328E900D6B61C /* Future.swift in Sources */,
+				4C30FEF21B532746003EF659 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C30FEC01B532404003EF659 /* CBGPromiseTests.swift in Sources */,
+				4C872E941B5327A000D6B61C /* PromiseSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +509,7 @@
 		4C30FEC51B532404003EF659 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -510,12 +520,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.cbg.CBGPromise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4C30FEC61B532404003EF659 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -568,6 +580,7 @@
 				4C30FEC61B532404003EF659 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C30FEC71B532404003EF659 /* Build configuration list for PBXNativeTarget "CBGPromiseTests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +589,7 @@
 				4C30FEC91B532404003EF659 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

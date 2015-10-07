@@ -4,3 +4,5 @@ machine:
 checkout:
   post:
     - git submodule update --init
+    - brew update
+    - brew upgrade xctool

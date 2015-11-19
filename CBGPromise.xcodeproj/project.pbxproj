@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0DC1531BFD9209007837CB /* CBGPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0DC1491BFD9209007837CB /* CBGPromise.framework */; };
+		4C0DC1601BFD923F007837CB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30FEEC1B5324B0003EF659 /* Nimble.framework */; };
+		4C0DC1611BFD9243007837CB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30FED51B5324AC003EF659 /* Quick.framework */; };
+		4C0DC1621BFD9284007837CB /* PromiseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C872E931B5327A000D6B61C /* PromiseSpec.swift */; };
+		4C0DC1631BFD9289007837CB /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30FEF11B532746003EF659 /* Promise.swift */; };
+		4C0DC1641BFD928B007837CB /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C872E961B5328E900D6B61C /* Future.swift */; };
+		4C0DC1651BFD9290007837CB /* CBGPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C30FEB31B532404003EF659 /* CBGPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C30FEB41B532404003EF659 /* CBGPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C30FEB31B532404003EF659 /* CBGPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C30FEBB1B532404003EF659 /* CBGPromise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30FEB01B532404003EF659 /* CBGPromise.framework */; };
 		4C30FEEF1B5324BC003EF659 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30FEDB1B5324AC003EF659 /* Quick.framework */; };
@@ -17,6 +24,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4C0DC1201BFD91B2007837CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C30FEE01B5324B0003EF659 /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F5DF1551BDCA0CE00C3A531;
+			remoteInfo = "Nimble-tvOS";
+		};
+		4C0DC1221BFD91B2007837CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C30FEE01B5324B0003EF659 /* Nimble.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F5DF15E1BDCA0CE00C3A531;
+			remoteInfo = "Nimble-tvOSTests";
+		};
+		4C0DC12D1BFD91B2007837CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C30FECB1B5324A9003EF659 /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F118CD51BDCA4AB005013A2;
+			remoteInfo = "Quick-tvOS";
+		};
+		4C0DC12F1BFD91B2007837CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C30FECB1B5324A9003EF659 /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F118CDE1BDCA4AB005013A2;
+			remoteInfo = "Quick-tvOSTests";
+		};
+		4C0DC1311BFD91B2007837CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C30FECB1B5324A9003EF659 /* Quick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1F118CF01BDCA4BB005013A2;
+			remoteInfo = "QuickFocused-tvOSTests";
+		};
+		4C0DC1541BFD9209007837CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C30FEA71B532404003EF659 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C0DC1481BFD9209007837CB;
+			remoteInfo = CBGPromise;
+		};
 		4C30FEBC1B532404003EF659 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C30FEA71B532404003EF659 /* Project object */;
@@ -97,10 +146,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0DC1491BFD9209007837CB /* CBGPromise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CBGPromise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C0DC1521BFD9209007837CB /* CBGPromiseTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CBGPromiseTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C30FEB01B532404003EF659 /* CBGPromise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CBGPromise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C30FEB31B532404003EF659 /* CBGPromise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBGPromise.h; sourceTree = "<group>"; };
 		4C30FEB51B532404003EF659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C30FEBA1B532404003EF659 /* CBGPromiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBGPromiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C30FEBA1B532404003EF659 /* CBGPromiseTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CBGPromiseTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C30FEC11B532404003EF659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C30FECB1B5324A9003EF659 /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Quick/Quick.xcodeproj; sourceTree = "<group>"; };
 		4C30FEE01B5324B0003EF659 /* Nimble.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nimble.xcodeproj; path = Nimble/Nimble.xcodeproj; sourceTree = "<group>"; };
@@ -110,6 +161,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4C0DC1451BFD9209007837CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C0DC14F1BFD9209007837CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0DC1611BFD9243007837CB /* Quick.framework in Frameworks */,
+				4C0DC1601BFD923F007837CB /* Nimble.framework in Frameworks */,
+				4C0DC1531BFD9209007837CB /* CBGPromise.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C30FEAC1B532404003EF659 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,8 +189,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C30FEF01B5324C0003EF659 /* Nimble.framework in Frameworks */,
 				4C30FEEF1B5324BC003EF659 /* Quick.framework in Frameworks */,
+				4C30FEF01B5324C0003EF659 /* Nimble.framework in Frameworks */,
 				4C30FEBB1B532404003EF659 /* CBGPromise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,7 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				4C30FEB01B532404003EF659 /* CBGPromise.framework */,
-				4C30FEBA1B532404003EF659 /* CBGPromiseTests.xctest */,
+				4C30FEBA1B532404003EF659 /* CBGPromiseTests-iOS.xctest */,
+				4C0DC1491BFD9209007837CB /* CBGPromise.framework */,
+				4C0DC1521BFD9209007837CB /* CBGPromiseTests-OSX.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,6 +257,9 @@
 				4C30FEDB1B5324AC003EF659 /* Quick.framework */,
 				4C30FEDD1B5324AC003EF659 /* Quick-iOSTests.xctest */,
 				4C30FEDF1B5324AC003EF659 /* QuickFocused-iOSTests.xctest */,
+				4C0DC12E1BFD91B2007837CB /* Quick.framework */,
+				4C0DC1301BFD91B2007837CB /* Quick-tvOSTests.xctest */,
+				4C0DC1321BFD91B2007837CB /* QuickFocused-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +271,8 @@
 				4C30FEEA1B5324B0003EF659 /* NimbleTests.xctest */,
 				4C30FEEC1B5324B0003EF659 /* Nimble.framework */,
 				4C30FEEE1B5324B0003EF659 /* NimbleTests.xctest */,
+				4C0DC1211BFD91B2007837CB /* Nimble.framework */,
+				4C0DC1231BFD91B2007837CB /* NimbleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +280,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		4C0DC1461BFD9209007837CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0DC1651BFD9290007837CB /* CBGPromise.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C30FEAD1B532404003EF659 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,9 +299,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4C30FEAF1B532404003EF659 /* CBGPromise */ = {
+		4C0DC1481BFD9209007837CB /* CBGPromise-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C30FEC41B532404003EF659 /* Build configuration list for PBXNativeTarget "CBGPromise" */;
+			buildConfigurationList = 4C0DC15A1BFD920A007837CB /* Build configuration list for PBXNativeTarget "CBGPromise-OSX" */;
+			buildPhases = (
+				4C0DC1441BFD9209007837CB /* Sources */,
+				4C0DC1451BFD9209007837CB /* Frameworks */,
+				4C0DC1461BFD9209007837CB /* Headers */,
+				4C0DC1471BFD9209007837CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CBGPromise-OSX";
+			productName = CBGPromise;
+			productReference = 4C0DC1491BFD9209007837CB /* CBGPromise.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4C0DC1511BFD9209007837CB /* CBGPromiseTests-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C0DC15D1BFD920A007837CB /* Build configuration list for PBXNativeTarget "CBGPromiseTests-OSX" */;
+			buildPhases = (
+				4C0DC14E1BFD9209007837CB /* Sources */,
+				4C0DC14F1BFD9209007837CB /* Frameworks */,
+				4C0DC1501BFD9209007837CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C0DC1551BFD9209007837CB /* PBXTargetDependency */,
+			);
+			name = "CBGPromiseTests-OSX";
+			productName = CBGPromiseTests;
+			productReference = 4C0DC1521BFD9209007837CB /* CBGPromiseTests-OSX.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4C30FEAF1B532404003EF659 /* CBGPromise-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C30FEC41B532404003EF659 /* Build configuration list for PBXNativeTarget "CBGPromise-iOS" */;
 			buildPhases = (
 				4C30FEAB1B532404003EF659 /* Sources */,
 				4C30FEAC1B532404003EF659 /* Frameworks */,
@@ -229,14 +348,14 @@
 			);
 			dependencies = (
 			);
-			name = CBGPromise;
+			name = "CBGPromise-iOS";
 			productName = CBGPromise;
 			productReference = 4C30FEB01B532404003EF659 /* CBGPromise.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4C30FEB91B532404003EF659 /* CBGPromiseTests */ = {
+		4C30FEB91B532404003EF659 /* CBGPromiseTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C30FEC71B532404003EF659 /* Build configuration list for PBXNativeTarget "CBGPromiseTests" */;
+			buildConfigurationList = 4C30FEC71B532404003EF659 /* Build configuration list for PBXNativeTarget "CBGPromiseTests-iOS" */;
 			buildPhases = (
 				4C30FEB61B532404003EF659 /* Sources */,
 				4C30FEB71B532404003EF659 /* Frameworks */,
@@ -247,9 +366,9 @@
 			dependencies = (
 				4C30FEBD1B532404003EF659 /* PBXTargetDependency */,
 			);
-			name = CBGPromiseTests;
+			name = "CBGPromiseTests-iOS";
 			productName = CBGPromiseTests;
-			productReference = 4C30FEBA1B532404003EF659 /* CBGPromiseTests.xctest */;
+			productReference = 4C30FEBA1B532404003EF659 /* CBGPromiseTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -258,10 +377,16 @@
 		4C30FEA71B532404003EF659 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = CBG;
 				TargetAttributes = {
+					4C0DC1481BFD9209007837CB = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					4C0DC1511BFD9209007837CB = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
 					4C30FEAF1B532404003EF659 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -292,13 +417,50 @@
 			);
 			projectRoot = "";
 			targets = (
-				4C30FEAF1B532404003EF659 /* CBGPromise */,
-				4C30FEB91B532404003EF659 /* CBGPromiseTests */,
+				4C30FEAF1B532404003EF659 /* CBGPromise-iOS */,
+				4C30FEB91B532404003EF659 /* CBGPromiseTests-iOS */,
+				4C0DC1481BFD9209007837CB /* CBGPromise-OSX */,
+				4C0DC1511BFD9209007837CB /* CBGPromiseTests-OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		4C0DC1211BFD91B2007837CB /* Nimble.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Nimble.framework;
+			remoteRef = 4C0DC1201BFD91B2007837CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4C0DC1231BFD91B2007837CB /* NimbleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NimbleTests.xctest;
+			remoteRef = 4C0DC1221BFD91B2007837CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4C0DC12E1BFD91B2007837CB /* Quick.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Quick.framework;
+			remoteRef = 4C0DC12D1BFD91B2007837CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4C0DC1301BFD91B2007837CB /* Quick-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Quick-tvOSTests.xctest";
+			remoteRef = 4C0DC12F1BFD91B2007837CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4C0DC1321BFD91B2007837CB /* QuickFocused-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "QuickFocused-tvOSTests.xctest";
+			remoteRef = 4C0DC1311BFD91B2007837CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		4C30FED51B5324AC003EF659 /* Quick.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -372,6 +534,20 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4C0DC1471BFD9209007837CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C0DC1501BFD9209007837CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C30FEAE1B532404003EF659 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,6 +565,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4C0DC1441BFD9209007837CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0DC1641BFD928B007837CB /* Future.swift in Sources */,
+				4C0DC1631BFD9289007837CB /* Promise.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C0DC14E1BFD9209007837CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0DC1621BFD9284007837CB /* PromiseSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C30FEAB1B532404003EF659 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,14 +602,89 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4C0DC1551BFD9209007837CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C0DC1481BFD9209007837CB /* CBGPromise-OSX */;
+			targetProxy = 4C0DC1541BFD9209007837CB /* PBXContainerItemProxy */;
+		};
 		4C30FEBD1B532404003EF659 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4C30FEAF1B532404003EF659 /* CBGPromise */;
+			target = 4C30FEAF1B532404003EF659 /* CBGPromise-iOS */;
 			targetProxy = 4C30FEBC1B532404003EF659 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4C0DC15B1BFD920A007837CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = CBGPromise/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = me.cbg.CBGPromise;
+				PRODUCT_NAME = CBGPromise;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C0DC15C1BFD920A007837CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = CBGPromise/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = me.cbg.CBGPromise;
+				PRODUCT_NAME = CBGPromise;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4C0DC15E1BFD920A007837CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CBGPromiseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = me.cbg.CBGPromiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4C0DC15F1BFD920A007837CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CBGPromiseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = me.cbg.CBGPromiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		4C30FEC21B532404003EF659 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -518,7 +786,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.cbg.CBGPromise;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CBGPromise;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -536,7 +804,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.cbg.CBGPromise;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CBGPromise;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -564,6 +832,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4C0DC15A1BFD920A007837CB /* Build configuration list for PBXNativeTarget "CBGPromise-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C0DC15B1BFD920A007837CB /* Debug */,
+				4C0DC15C1BFD920A007837CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C0DC15D1BFD920A007837CB /* Build configuration list for PBXNativeTarget "CBGPromiseTests-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C0DC15E1BFD920A007837CB /* Debug */,
+				4C0DC15F1BFD920A007837CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4C30FEAA1B532404003EF659 /* Build configuration list for PBXProject "CBGPromise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -573,7 +859,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C30FEC41B532404003EF659 /* Build configuration list for PBXNativeTarget "CBGPromise" */ = {
+		4C30FEC41B532404003EF659 /* Build configuration list for PBXNativeTarget "CBGPromise-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C30FEC51B532404003EF659 /* Debug */,
@@ -582,7 +868,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C30FEC71B532404003EF659 /* Build configuration list for PBXNativeTarget "CBGPromiseTests" */ = {
+		4C30FEC71B532404003EF659 /* Build configuration list for PBXNativeTarget "CBGPromiseTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C30FEC81B532404003EF659 /* Debug */,

@@ -1,4 +1,6 @@
 machine:
+  environment:
+    XCODE_SCHEME: CBGPromise-iOS
   xcode:
     version: "7.0"
 checkout:

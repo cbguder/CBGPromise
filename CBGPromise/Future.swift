@@ -7,6 +7,12 @@ public class Future<T> {
     public var value: T?
     public var error: NSError?
 
+    let semaphore: dispatch_semaphore_t
+
+    init() {
+        semaphore = dispatch_semaphore_create(0)
+    }
+
     public func then(callback: (T) -> ()) {
         successCallback = callback
 
@@ -23,12 +29,18 @@ public class Future<T> {
         }
     }
 
+    public func wait() {
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    }
+
     func resolve(value: T) {
         self.value = value
 
         if let successCallback = successCallback {
             successCallback(value)
         }
+
+        dispatch_semaphore_signal(semaphore)
     }
 
     func reject(error: NSError) {
@@ -37,5 +49,7 @@ public class Future<T> {
         if let errorCallback = errorCallback {
             errorCallback(error)
         }
+
+        dispatch_semaphore_signal(semaphore)
     }
 }

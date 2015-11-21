@@ -19,21 +19,21 @@ pod "CBGPromise"
 import CBGPromise
 
 class Test {
-  func getToken() -> Future<String> {
-    let promise = Promise<String>()
+    func getToken() -> Future<String> {
+        let promise = Promise<String>()
 
-    doAsyncCall {
-      promise.resolve("Test")
+        doAsyncCall {
+            promise.resolve("Test")
+        }
+
+        return promise.future
     }
 
-    return promise.future
-  }
-
-  func printToken() {
-    getToken().then { token in
-      print(token)
+    func printToken() {
+        getToken().then { token in
+            print(token)
+        }
     }
-  }
 }
 ```
 

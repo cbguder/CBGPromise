@@ -2,10 +2,10 @@ import Foundation
 
 public class Future<T> {
     var successCallback: ((T) -> ())?
-    var errorCallback: ((NSError) -> ())?
+    var errorCallback: ((ErrorType) -> ())?
 
     public var value: T?
-    public var error: NSError?
+    public var error: ErrorType?
 
     let semaphore: dispatch_semaphore_t
 
@@ -21,7 +21,7 @@ public class Future<T> {
         }
     }
 
-    public func error(callback: (NSError) -> ()) {
+    public func error(callback: (ErrorType) -> ()) {
         errorCallback = callback
 
         if let error = error {
@@ -43,7 +43,7 @@ public class Future<T> {
         dispatch_semaphore_signal(semaphore)
     }
 
-    func reject(error: NSError) {
+    func reject(error: ErrorType) {
         self.error = error
 
         if let errorCallback = errorCallback {

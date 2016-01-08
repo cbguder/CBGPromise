@@ -13,7 +13,7 @@ class PromiseSpec: QuickSpec {
 
             describe("calling the callback blocks") {
                 var value: String?
-                var error: NSError?
+                var error: ErrorType?
 
                 beforeEach {
                     value = nil

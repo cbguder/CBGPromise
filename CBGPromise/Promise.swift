@@ -11,7 +11,7 @@ public class Promise<T> {
         future.resolve(value)
     }
 
-    public func reject(error: NSError) {
+    public func reject(error: ErrorType) {
         future.reject(error)
     }
 }

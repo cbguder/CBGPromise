@@ -1,11 +1,11 @@
 import Foundation
 
-public class Future<T> {
+public class Future<T, ET> {
     var successCallbacks: [(T) -> ()]
-    var errorCallbacks: [(ErrorType) -> ()]
+    var errorCallbacks: [(ET) -> ()]
 
     public var value: T?
-    public var error: ErrorType?
+    public var error: ET?
 
     let semaphore: dispatch_semaphore_t
 
@@ -15,7 +15,7 @@ public class Future<T> {
         errorCallbacks = []
     }
 
-    public func then(callback: (T) -> ()) -> Future<T> {
+    public func then(callback: (T) -> ()) -> Future<T, ET> {
         successCallbacks.append(callback)
 
         if let value = value {
@@ -25,7 +25,7 @@ public class Future<T> {
         return self
     }
 
-    public func error(callback: (ErrorType) -> ()) -> Future<T> {
+    public func error(callback: (ET) -> ()) -> Future<T, ET> {
         errorCallbacks.append(callback)
 
         if let error = error {
@@ -49,7 +49,7 @@ public class Future<T> {
         dispatch_semaphore_signal(semaphore)
     }
 
-    func reject(error: ErrorType) {
+    func reject(error: ET) {
         self.error = error
 
         for errorCallback in errorCallbacks {

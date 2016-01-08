@@ -1,17 +1,17 @@
 import Foundation
 
-public class Promise<T> {
-    public let future: Future<T>
+public class Promise<T, ET> {
+    public let future: Future<T, ET>
 
     public init() {
-        future = Future<T>()
+        future = Future<T, ET>()
     }
 
     public func resolve(value: T) {
         future.resolve(value)
     }
 
-    public func reject(error: ErrorType) {
+    public func reject(error: ET) {
         future.reject(error)
     }
 }

@@ -141,6 +141,44 @@ class PromiseSpec: QuickSpec {
                     expect(errorB).to(equal(expectedError))
                 }
             }
+
+            describe("chaining callbacks") {
+                it("can start with the .then") {
+                    let future = subject.future.then { _ in }
+                    
+                    expect(future).to(beIdenticalTo(subject.future))
+                }
+                
+                it("can start with the .error") {
+                    let future = subject.future.error { _ in }
+                    
+                    expect(future).to(beIdenticalTo(subject.future))
+                }
+                
+                describe("when both callbacks are registered") {
+                    var value: String?
+                    var error: ErrorType?
+                    
+                    beforeEach {
+                        subject.future
+                            .then { v in value = v }
+                            .error { e in error = e }
+                    }
+                    
+                    it("calls the success callback when the promise is resolved") {
+                        subject.resolve("My Special Value")
+                        
+                        expect(value).to(equal("My Special Value"))
+                    }
+                    
+                    it("calls the error callback when the promise is rejected") {
+                        let expectedError = NSError(domain: "My Special Domain", code: 123, userInfo: nil)
+                        subject.reject(expectedError)
+                        
+                        expect(error).to(equal(expectedError))
+                    }
+                }
+            }
         }
     }
 }

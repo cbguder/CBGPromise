@@ -15,20 +15,24 @@ public class Future<T> {
         errorCallbacks = []
     }
 
-    public func then(callback: (T) -> ()) {
+    public func then(callback: (T) -> ()) -> Future<T> {
         successCallbacks.append(callback)
 
         if let value = value {
             callback(value)
         }
+        
+        return self
     }
 
-    public func error(callback: (ErrorType) -> ()) {
+    public func error(callback: (ErrorType) -> ()) -> Future<T> {
         errorCallbacks.append(callback)
 
         if let error = error {
             callback(error)
         }
+
+        return self
     }
 
     public func wait() {

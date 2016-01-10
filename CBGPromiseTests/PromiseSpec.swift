@@ -112,6 +112,35 @@ class PromiseSpec: QuickSpec {
                     expect(subject.future.error).to(equal(expectedError))
                 }
             }
+            
+            describe("multiple callbacks") {
+                it("calls each callback when the promise is resolved") {
+                    var valA: String?
+                    var valB: String?
+
+                    subject.future.then { v in valA = v }
+                    subject.future.then { v in valB = v }
+                    
+                    subject.resolve("My Special Value")
+                    
+                    expect(valA).to(equal("My Special Value"))
+                    expect(valB).to(equal("My Special Value"))
+                }
+                
+                it("calls each callback when the promise is rejected") {
+                    var errorA: ErrorType?
+                    var errorB: ErrorType?
+                    
+                    subject.future.error { e in errorA = e }
+                    subject.future.error { e in errorB = e }
+                    
+                    let expectedError = NSError(domain: "My Special Domain", code: 123, userInfo: nil)
+                    subject.reject(expectedError)
+                    
+                    expect(errorA).to(equal(expectedError))
+                    expect(errorB).to(equal(expectedError))
+                }
+            }
         }
     }
 }

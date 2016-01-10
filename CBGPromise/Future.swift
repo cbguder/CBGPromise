@@ -1,8 +1,8 @@
 import Foundation
 
 public class Future<T> {
-    var successCallback: ((T) -> ())?
-    var errorCallback: ((ErrorType) -> ())?
+    var successCallbacks: [(T) -> ()]
+    var errorCallbacks: [(ErrorType) -> ()]
 
     public var value: T?
     public var error: ErrorType?
@@ -11,10 +11,12 @@ public class Future<T> {
 
     init() {
         semaphore = dispatch_semaphore_create(0)
+        successCallbacks = []
+        errorCallbacks = []
     }
 
     public func then(callback: (T) -> ()) {
-        successCallback = callback
+        successCallbacks.append(callback)
 
         if let value = value {
             callback(value)
@@ -22,7 +24,7 @@ public class Future<T> {
     }
 
     public func error(callback: (ErrorType) -> ()) {
-        errorCallback = callback
+        errorCallbacks.append(callback)
 
         if let error = error {
             callback(error)
@@ -36,7 +38,7 @@ public class Future<T> {
     func resolve(value: T) {
         self.value = value
 
-        if let successCallback = successCallback {
+        for successCallback in successCallbacks {
             successCallback(value)
         }
 
@@ -46,7 +48,7 @@ public class Future<T> {
     func reject(error: ErrorType) {
         self.error = error
 
-        if let errorCallback = errorCallback {
+        for errorCallback in errorCallbacks {
             errorCallback(error)
         }
 

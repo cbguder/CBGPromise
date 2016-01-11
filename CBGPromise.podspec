@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/cbguder/CBGPromise.git", :tag => "v0.1.1" }
   s.requires_arc = true
 
-  s.ios.deployment_target = "9.0"
+  s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.11"
 
   s.source_files = "CBGPromise/**/*.swift"

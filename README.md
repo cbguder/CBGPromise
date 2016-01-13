@@ -32,6 +32,8 @@ class Test {
     func printToken() {
         getToken().then { token in
             print(token)
+        }.error { error in
+            print(error)
         }
     }
 }

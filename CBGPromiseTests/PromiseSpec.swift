@@ -5,15 +5,15 @@ import CBGPromise
 class PromiseSpec: QuickSpec {
     override func spec() {
         describe("Promise") {
-            var subject: Promise<String>!
+            var subject: Promise<String, NSError>!
 
             beforeEach {
-                subject = Promise<String>()
+                subject = Promise<String, NSError>()
             }
 
             describe("calling the callback blocks") {
                 var value: String?
-                var error: ErrorType?
+                var error: NSError?
 
                 beforeEach {
                     value = nil

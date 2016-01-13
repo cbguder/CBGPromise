@@ -19,8 +19,8 @@ pod "CBGPromise"
 import CBGPromise
 
 class Test {
-    func getToken() -> Future<String> {
-        let promise = Promise<String>()
+    func getToken() -> Future<String, NSError> {
+        let promise = Promise<String, NSError>()
 
         doAsyncCall {
             promise.resolve("Test")

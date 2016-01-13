@@ -1,6 +1,6 @@
 import Foundation
 
-public class Future<T, ET> {
+public class Future<T, ET: ErrorType> {
     var successCallbacks: [(T) -> ()]
     var errorCallbacks: [(ET) -> ()]
 

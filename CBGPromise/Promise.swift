@@ -1,6 +1,6 @@
 import Foundation
 
-public class Promise<T, ET> {
+public class Promise<T, ET: ErrorType> {
     public let future: Future<T, ET>
 
     public init() {

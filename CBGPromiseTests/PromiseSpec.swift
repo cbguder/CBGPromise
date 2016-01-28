@@ -179,6 +179,59 @@ class PromiseSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("multiple resolving / rejecting") {
+                context("resolving after having been resolved already") {
+                    beforeEach {
+                        subject.resolve("old")
+                    }
+
+                    it("does not resolve again") {
+                        subject.resolve("new")
+
+                        expect(subject.future.value).to(equal("old"))
+                    }
+                }
+
+                context("resolving after having been rejected already") {
+                    beforeEach {
+                        subject.reject(NSError(domain: "My Special Domain", code: 123, userInfo: nil))
+                    }
+
+                    it("does not resolve") {
+                        subject.resolve("new")
+
+                        expect(subject.future.value).to(beNil())
+                    }
+                }
+
+                context("rejecting after having been resolved already") {
+                    beforeEach {
+                        subject.resolve("old")
+                    }
+
+                    it("does not reject") {
+                        subject.reject(NSError(domain: "My Special Domain", code: 123, userInfo: nil))
+
+                        expect(subject.future.error).to(beNil())
+                    }
+                }
+
+                context("rejecting after having been rejected already") {
+                    var expectedError: NSError!
+
+                    beforeEach {
+                        expectedError = NSError(domain: "My Special Domain", code: 123, userInfo: nil)
+                        subject.reject(expectedError)
+                    }
+
+                    it("does not reject again") {
+                        subject.reject(NSError(domain: "My New Domain", code: 124, userInfo: nil))
+
+                        expect(subject.future.error).to(equal(expectedError))
+                    }
+                }
+            }
         }
     }
 }

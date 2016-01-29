@@ -43,7 +43,7 @@ public class Future<T, ET: ErrorType> {
     }
 
     func resolve(value: T) {
-        guard !completed else { return }
+        guard !completed else { preconditionFailed("resolve"); return }
 
         self.complete()
         self.value = value
@@ -56,7 +56,7 @@ public class Future<T, ET: ErrorType> {
     }
 
     func reject(error: ET) {
-        guard !completed else { return }
+        guard !completed else { preconditionFailed("reject"); return }
 
         self.complete()
         self.error = error
@@ -70,5 +70,9 @@ public class Future<T, ET: ErrorType> {
 
     private func complete() {
         self.completed = true
+    }
+    
+    private func preconditionFailed(call: String) {
+        NSException(name: "invalid \(call)", reason: "already resolved / rejected", userInfo: nil).raise()
     }
 }

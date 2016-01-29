@@ -186,10 +186,8 @@ class PromiseSpec: QuickSpec {
                         subject.resolve("old")
                     }
 
-                    it("does not resolve again") {
-                        subject.resolve("new")
-
-                        expect(subject.future.value).to(equal("old"))
+                    it("raises an exception") {
+                        expect { subject.resolve("new") }.to(raiseException())
                     }
                 }
 
@@ -198,10 +196,8 @@ class PromiseSpec: QuickSpec {
                         subject.reject(NSError(domain: "My Special Domain", code: 123, userInfo: nil))
                     }
 
-                    it("does not resolve") {
-                        subject.resolve("new")
-
-                        expect(subject.future.value).to(beNil())
+                    it("raises an exception") {
+                        expect { subject.resolve("new") }.to(raiseException())
                     }
                 }
 
@@ -210,25 +206,22 @@ class PromiseSpec: QuickSpec {
                         subject.resolve("old")
                     }
 
-                    it("does not reject") {
-                        subject.reject(NSError(domain: "My Special Domain", code: 123, userInfo: nil))
-
-                        expect(subject.future.error).to(beNil())
+                    it("raises an exception") {
+                        expect {
+                            subject.reject(NSError(domain: "My Special Domain", code: 123, userInfo: nil))
+                        }.to(raiseException())
                     }
                 }
 
                 context("rejecting after having been rejected already") {
-                    var expectedError: NSError!
-
                     beforeEach {
-                        expectedError = NSError(domain: "My Special Domain", code: 123, userInfo: nil)
-                        subject.reject(expectedError)
+                        subject.reject(NSError(domain: "My Special Domain", code: 123, userInfo: nil))
                     }
 
-                    it("does not reject again") {
-                        subject.reject(NSError(domain: "My New Domain", code: 124, userInfo: nil))
-
-                        expect(subject.future.error).to(equal(expectedError))
+                    it("raises an exception") {
+                        expect {
+                            subject.reject(NSError(domain: "My Special Domain", code: 123, userInfo: nil))
+                        }.to(raiseException())
                     }
                 }
             }

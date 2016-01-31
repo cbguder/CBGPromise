@@ -43,9 +43,8 @@ public class Future<T, ET: ErrorType> {
     }
 
     func resolve(value: T) {
-        guard !completed else { preconditionFailed("resolve"); return }
+        complete("resolve")
 
-        self.complete()
         self.value = value
 
         for successCallback in successCallbacks {
@@ -56,9 +55,8 @@ public class Future<T, ET: ErrorType> {
     }
 
     func reject(error: ET) {
-        guard !completed else { preconditionFailed("reject"); return }
+        complete("reject")
 
-        self.complete()
         self.error = error
 
         for errorCallback in errorCallbacks {
@@ -68,11 +66,12 @@ public class Future<T, ET: ErrorType> {
         dispatch_semaphore_signal(semaphore)
     }
 
-    private func complete() {
-        self.completed = true
-    }
-    
-    private func preconditionFailed(call: String) {
-        NSException(name: "invalid \(call)", reason: "already resolved / rejected", userInfo: nil).raise()
+    private func complete(call: String) {
+        guard !completed else {
+            NSException(name: "invalid \(call)", reason: "already resolved / rejected", userInfo: nil).raise()
+            return
+        }
+
+        completed = true
     }
 }

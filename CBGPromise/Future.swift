@@ -1,25 +1,22 @@
 import Foundation
 
-public class Future<T, ET: ErrorType> {
-    var successCallbacks: [(T) -> ()]
-    var errorCallbacks: [(ET) -> ()]
+public class Future<T> {
+    var callbacks: [(T) -> ()]
 
     private var completed: Bool
 
     public var value: T?
-    public var error: ET?
 
     let semaphore: dispatch_semaphore_t
 
     init() {
         semaphore = dispatch_semaphore_create(0)
-        successCallbacks = []
-        errorCallbacks = []
+        callbacks = []
         completed = false
     }
 
-    public func then(callback: (T) -> ()) -> Future<T, ET> {
-        successCallbacks.append(callback)
+    public func then(callback: (T) -> ()) -> Future<T> {
+        callbacks.append(callback)
 
         if let value = value {
             callback(value)
@@ -28,50 +25,24 @@ public class Future<T, ET: ErrorType> {
         return self
     }
 
-    public func error(callback: (ET) -> ()) -> Future<T, ET> {
-        errorCallbacks.append(callback)
-
-        if let error = error {
-            callback(error)
-        }
-
-        return self
-    }
-
     public func wait() {
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     }
 
     func resolve(value: T) {
-        complete("resolve")
-
-        self.value = value
-
-        for successCallback in successCallbacks {
-            successCallback(value)
-        }
-
-        dispatch_semaphore_signal(semaphore)
-    }
-
-    func reject(error: ET) {
-        complete("reject")
-
-        self.error = error
-
-        for errorCallback in errorCallbacks {
-            errorCallback(error)
-        }
-
-        dispatch_semaphore_signal(semaphore)
-    }
-
-    private func complete(call: String) {
         guard !completed else {
-            NSException(name: "invalid \(call)", reason: "already resolved / rejected", userInfo: nil).raise()
+            NSException(name: "invalid resolution", reason: "already resolved", userInfo: nil).raise()
             return
         }
 
         completed = true
+
+        self.value = value
+
+        for callback in callbacks {
+            callback(value)
+        }
+
+        dispatch_semaphore_signal(semaphore)
     }
 }

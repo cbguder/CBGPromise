@@ -2,7 +2,7 @@ machine:
   environment:
     XCODE_SCHEME: CBGPromise-iOS
   xcode:
-    version: "7.0"
+    version: "7.3"
 checkout:
   post:
     - git submodule update --init

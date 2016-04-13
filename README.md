@@ -19,8 +19,8 @@ pod "CBGPromise"
 import CBGPromise
 
 class Test {
-    func getToken() -> Future<String, NSError> {
-        let promise = Promise<String, NSError>()
+    func getToken() -> Future<String> {
+        let promise = Promise<String>()
 
         doAsyncCall {
             promise.resolve("Test")
@@ -32,8 +32,6 @@ class Test {
     func printToken() {
         getToken().then { token in
             print(token)
-        }.error { error in
-            print(error)
         }
     }
 }

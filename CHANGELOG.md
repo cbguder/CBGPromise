@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.3.0] - 2016-04-17
+### Changed
+- Promises now resolve with a single type
+- Changed OS X deployment target to 10.10
+- Trying to resolve a promise more than once raises an exception
+
 ## [0.2.0] - 2016-01-12
 ### Added
 - Can now chain callbacks
@@ -18,3 +24,4 @@
 
 [0.1.1]: https://github.com/cbguder/CBGPromise/compare/v0.1.0...v0.1.1
 [0.2.0]: https://github.com/cbguder/CBGPromise/compare/v0.1.1...v0.2.0
+[0.3.0]: https://github.com/cbguder/CBGPromise/compare/v0.2.0...v0.3.0

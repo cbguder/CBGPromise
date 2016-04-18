@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C0DC1481BFD9209007837CB"
+               BlueprintIdentifier = "4CAD83E51CC4652800253CF4"
                BuildableName = "CBGPromise.framework"
                BlueprintName = "CBGPromise-OSX"
                ReferencedContainer = "container:CBGPromise.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C0DC1511BFD9209007837CB"
+               BlueprintIdentifier = "4CAD83EE1CC4652800253CF4"
                BuildableName = "CBGPromiseTests-OSX.xctest"
                BlueprintName = "CBGPromiseTests-OSX"
                ReferencedContainer = "container:CBGPromise.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4C0DC1481BFD9209007837CB"
+            BlueprintIdentifier = "4CAD83E51CC4652800253CF4"
             BuildableName = "CBGPromise.framework"
             BlueprintName = "CBGPromise-OSX"
             ReferencedContainer = "container:CBGPromise.xcodeproj">
@@ -64,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4C0DC1481BFD9209007837CB"
+            BlueprintIdentifier = "4CAD83E51CC4652800253CF4"
             BuildableName = "CBGPromise.framework"
             BlueprintName = "CBGPromise-OSX"
             ReferencedContainer = "container:CBGPromise.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4C0DC1481BFD9209007837CB"
+            BlueprintIdentifier = "4CAD83E51CC4652800253CF4"
             BuildableName = "CBGPromise.framework"
             BlueprintName = "CBGPromise-OSX"
             ReferencedContainer = "container:CBGPromise.xcodeproj">

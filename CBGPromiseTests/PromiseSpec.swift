@@ -62,7 +62,7 @@ class PromiseSpec: QuickSpec {
                     expect(subject.future.value).to(equal("My Special Value"))
                 }
             }
-            
+
             describe("multiple callbacks") {
                 it("calls each callback when the promise is resolved") {
                     var valA: String?
@@ -70,9 +70,9 @@ class PromiseSpec: QuickSpec {
 
                     subject.future.then { v in valA = v }
                     subject.future.then { v in valB = v }
-                    
+
                     subject.resolve("My Special Value")
-                    
+
                     expect(valA).to(equal("My Special Value"))
                     expect(valB).to(equal("My Special Value"))
                 }

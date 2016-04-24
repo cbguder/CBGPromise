@@ -14,7 +14,7 @@ class Client {
     }
 }
 
-class SimpleExample {
+class WaitingExample {
     func main() {
         let client = Client()
 

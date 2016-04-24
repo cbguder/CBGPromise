@@ -1,7 +1,7 @@
 import Foundation
 
 public class Future<T> {
-    var callbacks: [(T) -> ()]
+    private var callbacks: [(T) -> ()]
 
     private var completed: Bool
 

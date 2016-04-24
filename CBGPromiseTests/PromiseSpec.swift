@@ -52,6 +52,7 @@ class PromiseSpec: QuickSpec {
             describe("waiting for the promise to resolve") {
                 it("should wait for a value") {
                     let queue = dispatch_queue_create("test", DISPATCH_QUEUE_SERIAL)
+
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), queue) {
                         subject.resolve("My Special Value")
                     }

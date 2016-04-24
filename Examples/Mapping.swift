@@ -14,7 +14,7 @@ class Client {
     }
 
     func getArrayValue(int: Int) -> Future<[String]> {
-        let promise = Promise<String>()
+        let promise = Promise<[String]>()
 
         someAsyncCall(int) {
             promise.resolve(["Test 1", "Test 2"])
@@ -38,7 +38,7 @@ class MappingExample {
             return arr.first
         }
 
-        otherStringFuture.then { value in
+        stringFuture.then { value in
             print(value)
         }
     }

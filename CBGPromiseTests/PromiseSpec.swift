@@ -89,6 +89,43 @@ class PromiseSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("mapping") {
+                it("returns a new future") {
+                    var mappedValue: Int?
+
+                    let mappedFuture = subject.future.map { str -> Int? in
+                        return Int(str)
+                    }
+
+                    mappedFuture.then { num in
+                        mappedValue = num
+                    }
+
+                    subject.resolve("123")
+
+                    expect(mappedValue).to(equal(123))
+                }
+
+                it("allows promise chaining") {
+                    var mappedValue: Int?
+
+                    let mappedPromise = Promise<Int>()
+
+                    let mappedFuture = subject.future.futureMap { str -> Future<Int> in
+                        return mappedPromise.future
+                    }
+
+                    mappedFuture.then { num in
+                        mappedValue = num
+                    }
+
+                    subject.resolve("Irrelevant")
+                    mappedPromise.resolve(123)
+
+                    expect(mappedValue).to(equal(123))
+                }
+            }
         }
     }
 }

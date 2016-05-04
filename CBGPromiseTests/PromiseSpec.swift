@@ -112,7 +112,7 @@ class PromiseSpec: QuickSpec {
 
                     let mappedPromise = Promise<Int>()
 
-                    let mappedFuture = subject.future.futureMap { str -> Future<Int> in
+                    let mappedFuture = subject.future.map { str -> Future<Int> in
                         return mappedPromise.future
                     }
 

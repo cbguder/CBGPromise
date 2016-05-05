@@ -1,7 +1,7 @@
 import Foundation
 
 public class Future<T> {
-    private var callbacks: [(T) -> ()]
+    private var callbacks: [T -> Void]
 
     private var completed: Bool
 
@@ -15,7 +15,7 @@ public class Future<T> {
         completed = false
     }
 
-    public func then(callback: (T) -> ()) -> Future<T> {
+    public func then(callback: T -> Void) -> Future<T> {
         callbacks.append(callback)
 
         if let value = value {
@@ -29,7 +29,7 @@ public class Future<T> {
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     }
 
-    public func map<U>(transform: (T) -> (U)) -> Future<U> {
+    public func map<U>(transform: T -> U) -> Future<U> {
         let mappedPromise = Promise<U>()
 
         then { value in
@@ -40,7 +40,7 @@ public class Future<T> {
         return mappedPromise.future
     }
 
-    public func futureMap<U>(transform: (T) -> (Future<U>)) -> Future<U> {
+    public func map<U>(transform: T -> Future<U>) -> Future<U> {
         let mappedPromise = Promise<U>()
 
         then { value in

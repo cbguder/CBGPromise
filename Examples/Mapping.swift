@@ -30,7 +30,7 @@ class MappingExample {
 
         let integerFuture = client.getIntegerValue()
 
-        let arrayFuture = integerFuture.futureMap { int -> Future<[String]> in
+        let arrayFuture = integerFuture.map { int -> Future<[String]> in
             return client.getArrayValue(int)
         }
 

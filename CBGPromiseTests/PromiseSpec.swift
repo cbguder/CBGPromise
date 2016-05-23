@@ -57,9 +57,10 @@ class PromiseSpec: QuickSpec {
                         subject.resolve("My Special Value")
                     }
 
-                    subject.future.wait()
+                    let receivedValue = subject.future.wait()
 
                     expect(subject.future.value).to(equal("My Special Value"))
+                    expect(receivedValue).to(equal(subject.future.value))
                 }
             }
 

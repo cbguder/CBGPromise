@@ -25,8 +25,9 @@ public class Future<T> {
         return self
     }
 
-    public func wait() {
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    public func wait() -> T? {
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        return self.value
     }
 
     public func map<U>(transform: T -> U) -> Future<U> {

@@ -7,10 +7,22 @@
 
 ## Installation
 
-CBGPromise is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+CBGPromise is available through [CocoaPods](http://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage).
+
+### CocoaPods
+
+Add the following line to your Podfile:
 
 ```ruby
 pod "CBGPromise"
+```
+
+### Carthage
+
+Add the following line to your Cartfile:
+
+```ruby
+github "cbguder/CBGPromise"
 ```
 
 ## Usage

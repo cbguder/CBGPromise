@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.3.1] - 2016-06-15
+### Added
+- Can now map futures
+
+### Changed
+- Future.wait() now returns the future's value
+- Minimum deploy targets are lowered to iOS 8 and macOS 10.11
+
 ## [0.3.0] - 2016-04-17
 ### Changed
 - Promises now resolve with a single type
@@ -25,3 +33,4 @@
 [0.1.1]: https://github.com/cbguder/CBGPromise/compare/v0.1.0...v0.1.1
 [0.2.0]: https://github.com/cbguder/CBGPromise/compare/v0.1.1...v0.2.0
 [0.3.0]: https://github.com/cbguder/CBGPromise/compare/v0.2.0...v0.3.0
+[0.3.1]: https://github.com/cbguder/CBGPromise/compare/v0.3.0...v0.3.1

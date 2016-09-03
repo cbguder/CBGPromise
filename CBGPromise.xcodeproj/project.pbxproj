@@ -217,10 +217,10 @@
 		4C7FBB9C1CC4672B0057A23F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C7FBBA51CC4672B0057A23F /* Nimble.framework */,
-				4C7FBBA71CC4672B0057A23F /* NimbleTests.xctest */,
 				4C7FBBA91CC4672B0057A23F /* Nimble.framework */,
 				4C7FBBAB1CC4672B0057A23F /* NimbleTests.xctest */,
+				4C7FBBA51CC4672B0057A23F /* Nimble.framework */,
+				4C7FBBA71CC4672B0057A23F /* NimbleTests.xctest */,
 				4C7FBBAD1CC4672B0057A23F /* Nimble.framework */,
 				4C7FBBAF1CC4672B0057A23F /* NimbleTests.xctest */,
 			);

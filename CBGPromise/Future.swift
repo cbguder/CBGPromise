@@ -1,21 +1,21 @@
 import Foundation
 
-public class Future<T> {
-    private var callbacks: [T -> Void]
+public final class Future<T> {
+    private var callbacks: [(T) -> Void]
 
     private var completed: Bool
 
-    public var value: T?
+    public private(set) var value: T?
 
-    let semaphore: dispatch_semaphore_t
+    let semaphore: DispatchSemaphore
 
     init() {
-        semaphore = dispatch_semaphore_create(0)
+        semaphore = DispatchSemaphore(value: 0)
         callbacks = []
         completed = false
     }
 
-    public func then(callback: T -> Void) -> Future<T> {
+    public func then(callback: @escaping (T) -> Void) -> Future<T> {
         callbacks.append(callback)
 
         if let value = value {
@@ -26,14 +26,14 @@ public class Future<T> {
     }
 
     public func wait() -> T? {
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         return self.value
     }
 
-    public func map<U>(transform: T -> U) -> Future<U> {
+    public func map<U>(_ transform: @escaping (T) -> U) -> Future<U> {
         let mappedPromise = Promise<U>()
 
-        then { value in
+        _ = then { value in
             let mappedValue = transform(value)
             mappedPromise.resolve(mappedValue)
         }
@@ -41,13 +41,13 @@ public class Future<T> {
         return mappedPromise.future
     }
 
-    public func map<U>(transform: T -> Future<U>) -> Future<U> {
+    public func map<U>(_ transform: @escaping (T) -> Future<U>) -> Future<U> {
         let mappedPromise = Promise<U>()
 
-        then { value in
+        _ = then { value in
             let mappedFuture = transform(value)
 
-            mappedFuture.then { mappedValue in
+            _ = mappedFuture.then { mappedValue in
                 mappedPromise.resolve(mappedValue)
             }
         }
@@ -55,9 +55,9 @@ public class Future<T> {
         return mappedPromise.future
     }
 
-    func resolve(value: T) {
+    func resolve(_ value: T) {
         guard !completed else {
-            NSException(name: "invalid resolution", reason: "already resolved", userInfo: nil).raise()
+            NSException(name: NSExceptionName(rawValue: "invalid resolution"), reason: "already resolved", userInfo: nil).raise()
             return
         }
 
@@ -69,6 +69,6 @@ public class Future<T> {
             callback(value)
         }
 
-        dispatch_semaphore_signal(semaphore)
+        semaphore.signal()
     }
 }

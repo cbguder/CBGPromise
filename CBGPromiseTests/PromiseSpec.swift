@@ -16,7 +16,7 @@ class PromiseSpec: QuickSpec {
 
                 context("when the callbacks are registered before the promise is resolved") {
                     beforeEach {
-                        subject.future.then { r in
+                        _ = subject.future.then { r in
                             result = r
                         }
                     }
@@ -32,7 +32,7 @@ class PromiseSpec: QuickSpec {
                     it("should call the callback when it's resolved") {
                         subject.resolve("My Special Value")
 
-                        subject.future.then { r in
+                        _ = subject.future.then { r in
                             result = r
                         }
 
@@ -51,9 +51,9 @@ class PromiseSpec: QuickSpec {
 
             describe("waiting for the promise to resolve") {
                 it("should wait for a value") {
-                    let queue = dispatch_queue_create("test", DISPATCH_QUEUE_SERIAL)
+                    let queue = DispatchQueue(label: "test")
 
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), queue) {
+                    queue.asyncAfter(deadline: DispatchTime.now() + .milliseconds(100)) {
                         subject.resolve("My Special Value")
                     }
 
@@ -69,8 +69,8 @@ class PromiseSpec: QuickSpec {
                     var valA: String?
                     var valB: String?
 
-                    subject.future.then { v in valA = v }
-                    subject.future.then { v in valB = v }
+                    _ = subject.future.then { v in valA = v }
+                    _ = subject.future.then { v in valB = v }
 
                     subject.resolve("My Special Value")
 
@@ -99,7 +99,7 @@ class PromiseSpec: QuickSpec {
                         return Int(str)
                     }
 
-                    mappedFuture.then { num in
+                    _ = mappedFuture.then { num in
                         mappedValue = num
                     }
 
@@ -117,7 +117,7 @@ class PromiseSpec: QuickSpec {
                         return mappedPromise.future
                     }
 
-                    mappedFuture.then { num in
+                    _ = mappedFuture.then { num in
                         mappedValue = num
                     }
 

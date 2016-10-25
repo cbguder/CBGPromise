@@ -4,21 +4,21 @@
 import CBGPromise
 
 enum NetworkResult {
-    case Success(NSData)
-    case Error(NSError)
+    case Success(Data)
+    case Error(Error)
 }
 
 class NetworkClient {
-    let session: NSURLSession!
+    let session: URLSession!
 
-    init(session: NSURLSession) {
+    init(session: URLSession) {
         self.session = session
     }
 
-    func sendRequest(request: NSURLRequest) -> Future<NetworkResult> {
+    func sendRequest(_ request: URLRequest) -> Future<NetworkResult> {
         let promise = Promise<NetworkResult>()
 
-        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+        let task = session.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 promise.resolve(.Error(error))
             }
@@ -36,15 +36,15 @@ class NetworkClient {
 
 class ErrorsExample {
     func main() {
-        let session = NSURLSession.sharedSession()
+        let session = URLSession.shared
         let client = NetworkClient(session: session)
 
-        let url = NSURL(string: "https://www.example.com")!
-        let request = NSURLRequest(URL: url)
+        let url = URL(string: "https://www.example.com")!
+        let request = URLRequest(url: url as URL)
 
         let future = client.sendRequest(request)
 
-        future.then { networkResult in
+        _ = future.then { networkResult in
             switch networkResult {
             case .Success(let data):
                 print(data)

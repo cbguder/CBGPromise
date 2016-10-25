@@ -202,8 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				4C7FBB8A1CC467240057A23F /* Quick.framework */,
-				4C7FBB8C1CC467240057A23F /* Quick-OSXTests.xctest */,
-				4C7FBB8E1CC467240057A23F /* QuickFocused-OSXTests.xctest */,
+				4C7FBB8C1CC467240057A23F /* Quick-macOSTests.xctest */,
+				4C7FBB8E1CC467240057A23F /* QuickFocused-macOSTests.xctest */,
 				4C7FBB901CC467240057A23F /* Quick.framework */,
 				4C7FBB921CC467240057A23F /* Quick-iOSTests.xctest */,
 				4C7FBB941CC467240057A23F /* QuickFocused-iOSTests.xctest */,
@@ -436,17 +436,17 @@
 			remoteRef = 4C7FBB891CC467240057A23F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4C7FBB8C1CC467240057A23F /* Quick-OSXTests.xctest */ = {
+		4C7FBB8C1CC467240057A23F /* Quick-macOSTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Quick-OSXTests.xctest";
+			path = "Quick-macOSTests.xctest";
 			remoteRef = 4C7FBB8B1CC467240057A23F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4C7FBB8E1CC467240057A23F /* QuickFocused-OSXTests.xctest */ = {
+		4C7FBB8E1CC467240057A23F /* QuickFocused-macOSTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "QuickFocused-OSXTests.xctest";
+			path = "QuickFocused-macOSTests.xctest";
 			remoteRef = 4C7FBB8D1CC467240057A23F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

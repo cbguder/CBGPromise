@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.4.0] - 2016-10-24
+### Added
+- Supports Swift 3
+
+### Changed
+- Future.resolve() now throws an assertion instead of NSException when resolved twice
+
 ## [0.3.1] - 2016-06-15
 ### Added
 - Can now map futures
@@ -34,3 +41,4 @@
 [0.2.0]: https://github.com/cbguder/CBGPromise/compare/v0.1.1...v0.2.0
 [0.3.0]: https://github.com/cbguder/CBGPromise/compare/v0.2.0...v0.3.0
 [0.3.1]: https://github.com/cbguder/CBGPromise/compare/v0.3.0...v0.3.1
+[0.4.0]: https://github.com/cbguder/CBGPromise/compare/v0.3.1...v0.4.0

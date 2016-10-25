@@ -86,7 +86,7 @@ class PromiseSpec: QuickSpec {
                     }
 
                     it("raises an exception") {
-                        expect { subject.resolve("new") }.to(raiseException())
+                        expect { subject.resolve("new") }.to(throwAssertion())
                     }
                 }
             }

@@ -56,10 +56,7 @@ public final class Future<T> {
     }
 
     func resolve(_ value: T) {
-        guard !completed else {
-            NSException(name: NSExceptionName(rawValue: "invalid resolution"), reason: "already resolved", userInfo: nil).raise()
-            return
-        }
+        precondition(!completed, "future is already resolved")
 
         completed = true
 

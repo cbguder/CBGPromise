@@ -127,6 +127,34 @@ class PromiseSpec: QuickSpec {
                     expect(mappedValue).to(equal(123))
                 }
             }
+
+            describe("when") {
+                var firstPromise: Promise<String>!
+                var secondPromise: Promise<String>!
+
+                var receivedFuture: Future<[String]>!
+
+                beforeEach {
+                    firstPromise = Promise<String>()
+                    secondPromise = Promise<String>()
+
+                    receivedFuture = Promise<String>.when([firstPromise.future, secondPromise.future])
+                }
+
+                it("waits until both promises resolve to return") {
+                    expect(receivedFuture.value).to(beNil())
+                    firstPromise.resolve("hello")
+                    expect(receivedFuture.value).to(beNil())
+                    secondPromise.resolve("goodbye")
+                    expect(receivedFuture.value) == ["hello", "goodbye"]
+                }
+
+                it("returns the array in the order the promises were given") {
+                    secondPromise.resolve("goodbye")
+                    firstPromise.resolve("hello")
+                    expect(receivedFuture.value) == ["hello", "goodbye"]
+                }
+            }
         }
     }
 }

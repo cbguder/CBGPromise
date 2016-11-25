@@ -10,4 +10,22 @@ public final class Promise<T> {
     public func resolve(_ value: T) {
         future.resolve(value)
     }
+
+    public class func when<T>(_ futures: [Future<T>]) -> Future<[T]> {
+        let promise = Promise<[T]>()
+        var values: [T?] = futures.map { _ in nil }
+
+        var currentCount = 0
+
+        for (idx, future) in futures.enumerated() {
+            _ = future.then {
+                values[idx] = $0
+                currentCount += 1
+                if currentCount == futures.count {
+                    promise.resolve(values.map { $0! })
+                }
+            }
+        }
+        return promise.future
+    }
 }

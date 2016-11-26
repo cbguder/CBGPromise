@@ -5,7 +5,7 @@ set -o pipefail
 
 xcodebuild \
   -sdk iphonesimulator \
-  -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest' \
+  -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest' \
   -project 'CBGPromise.xcodeproj' \
   -scheme 'CBGPromise-iOS' \
   clean build test \

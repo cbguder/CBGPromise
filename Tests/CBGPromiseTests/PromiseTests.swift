@@ -1,8 +1,9 @@
 import Quick
 import Nimble
+import Dispatch
 import CBGPromise
 
-class PromiseSpec: QuickSpec {
+class PromiseTests: QuickSpec {
     override func spec() {
         describe("Promise") {
             var subject: Promise<String>!
@@ -79,6 +80,8 @@ class PromiseSpec: QuickSpec {
                 }
             }
 
+#if !SWIFT_PACKAGE
+// see https://github.com/Quick/Nimble/blob/master/Sources/Nimble/Matchers/ThrowAssertion.swift
             describe("multiple resolving") {
                 context("resolving after having been resolved already") {
                     beforeEach {
@@ -90,6 +93,7 @@ class PromiseSpec: QuickSpec {
                     }
                 }
             }
+#endif
 
             describe("mapping") {
                 it("returns a new future") {

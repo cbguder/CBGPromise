@@ -13,3 +13,7 @@ xcuserdata
 *.moved-aside
 *.xcuserstate
 *.xcscmblueprint
+
+# Swift Package Manager
+/.build
+/Packages

@@ -19,8 +19,8 @@
 		4CAD866E1CC465B500253CF4 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD83FF1CC4656500253CF4 /* Future.swift */; };
 		4CAD866F1CC465B500253CF4 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD84011CC4656500253CF4 /* Promise.swift */; };
 		4CAD86701CC465B900253CF4 /* CBGPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CAD83FE1CC4656500253CF4 /* CBGPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CAD86711CC465C800253CF4 /* PromiseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD84041CC4656500253CF4 /* PromiseSpec.swift */; };
-		4CAD86721CC465CC00253CF4 /* PromiseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD84041CC4656500253CF4 /* PromiseSpec.swift */; };
+		4CAD86711CC465C800253CF4 /* PromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD84041CC4656500253CF4 /* PromiseTests.swift */; };
+		4CAD86721CC465CC00253CF4 /* PromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD84041CC4656500253CF4 /* PromiseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,7 +157,7 @@
 		4CAD84001CC4656500253CF4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CAD84011CC4656500253CF4 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		4CAD84031CC4656500253CF4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CAD84041CC4656500253CF4 /* PromiseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseSpec.swift; sourceTree = "<group>"; };
+		4CAD84041CC4656500253CF4 /* PromiseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromiseTests.swift; path = CBGPromiseTests/PromiseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,8 +230,8 @@
 		4CAD83BD1CC4650700253CF4 = {
 			isa = PBXGroup;
 			children = (
-				4CAD83FD1CC4656500253CF4 /* CBGPromise */,
-				4CAD84021CC4656500253CF4 /* CBGPromiseTests */,
+				4CAD83FD1CC4656500253CF4 /* Sources */,
+				4CAD84021CC4656500253CF4 /* Tests */,
 				4CAD84051CC4656500253CF4 /* Externals */,
 				4CAD83CA1CC4651A00253CF4 /* Products */,
 			);
@@ -248,7 +248,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4CAD83FD1CC4656500253CF4 /* CBGPromise */ = {
+		4CAD83FD1CC4656500253CF4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				4CAD83FE1CC4656500253CF4 /* CBGPromise.h */,
@@ -256,16 +256,16 @@
 				4CAD84001CC4656500253CF4 /* Info.plist */,
 				4CAD84011CC4656500253CF4 /* Promise.swift */,
 			);
-			path = CBGPromise;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		4CAD84021CC4656500253CF4 /* CBGPromiseTests */ = {
+		4CAD84021CC4656500253CF4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				4CAD84031CC4656500253CF4 /* Info.plist */,
-				4CAD84041CC4656500253CF4 /* PromiseSpec.swift */,
+				4CAD84041CC4656500253CF4 /* PromiseTests.swift */,
 			);
-			path = CBGPromiseTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		4CAD84051CC4656500253CF4 /* Externals */ = {
@@ -581,7 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CAD86711CC465C800253CF4 /* PromiseSpec.swift in Sources */,
+				4CAD86711CC465C800253CF4 /* PromiseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,7 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CAD86721CC465CC00253CF4 /* PromiseSpec.swift in Sources */,
+				4CAD86721CC465CC00253CF4 /* PromiseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,7 +710,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/CBGPromise/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -765,7 +765,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/CBGPromise/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -819,7 +819,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CBGPromiseTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -863,7 +863,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CBGPromiseTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -920,7 +920,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/CBGPromise/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -976,7 +976,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/CBGPromise/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1029,7 +1029,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CBGPromiseTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1074,7 +1074,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CBGPromiseTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;

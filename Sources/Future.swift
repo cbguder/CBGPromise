@@ -1,4 +1,5 @@
 import Foundation
+import Dispatch
 
 public final class Future<T> {
     private var callbacks: [(T) -> Void]

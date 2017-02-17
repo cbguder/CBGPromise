@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
 
-  s.source_files = "CBGPromise/**/*.swift"
+  s.source_files = "Sources/**/*.swift"
 end

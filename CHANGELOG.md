@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.4.1] - 2017-02-16
+### Added
+- Supports Swift Package Manager
+- Can now join multiple futures using Promise.when()
+
 ## [0.4.0] - 2016-10-24
 ### Added
 - Supports Swift 3

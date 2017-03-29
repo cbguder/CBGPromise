@@ -48,7 +48,7 @@ class SimpleExample {
     func main() {
         let client = Client()
 
-        _ = client.getValue().then { value in
+        client.getValue().then { value in
             print(value)
         }
     }

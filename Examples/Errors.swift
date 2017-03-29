@@ -44,7 +44,7 @@ class ErrorsExample {
 
         let future = client.sendRequest(request)
 
-        _ = future.then { networkResult in
+        future.then { networkResult in
             switch networkResult {
             case .Success(let data):
                 print(data)

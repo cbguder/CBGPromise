@@ -38,7 +38,7 @@ class MappingExample {
             return arr.first
         }
 
-        _ = stringFuture.then { value in
+        stringFuture.then { value in
             print(value)
         }
     }

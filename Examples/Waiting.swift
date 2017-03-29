@@ -20,10 +20,10 @@ class WaitingExample {
 
         let future = client.getValue()
 
-        _ = future.then { value in
+        future.then { value in
             print(value)
         }
 
-        _ = future.wait()
+        future.wait()
     }
 }

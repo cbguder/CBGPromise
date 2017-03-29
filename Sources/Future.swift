@@ -16,6 +16,7 @@ public final class Future<T> {
         completed = false
     }
 
+    @discardableResult
     public func then(callback: @escaping (T) -> Void) -> Future<T> {
         callbacks.append(callback)
 
@@ -26,15 +27,17 @@ public final class Future<T> {
         return self
     }
 
+    @discardableResult
     public func wait() -> T? {
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         return self.value
     }
 
+    @discardableResult
     public func map<U>(_ transform: @escaping (T) -> U) -> Future<U> {
         let mappedPromise = Promise<U>()
 
-        _ = then { value in
+        then { value in
             let mappedValue = transform(value)
             mappedPromise.resolve(mappedValue)
         }
@@ -42,13 +45,14 @@ public final class Future<T> {
         return mappedPromise.future
     }
 
+    @discardableResult
     public func map<U>(_ transform: @escaping (T) -> Future<U>) -> Future<U> {
         let mappedPromise = Promise<U>()
 
-        _ = then { value in
+        then { value in
             let mappedFuture = transform(value)
 
-            _ = mappedFuture.then { mappedValue in
+            mappedFuture.then { mappedValue in
                 mappedPromise.resolve(mappedValue)
             }
         }

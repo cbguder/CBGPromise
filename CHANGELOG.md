@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.4.2] - 2017-03-29
+### Changed
+- Can now discard result of all functions with return values (then, wait, map, when)
+
 ## [0.4.1] - 2017-02-16
 ### Added
 - Supports Swift Package Manager

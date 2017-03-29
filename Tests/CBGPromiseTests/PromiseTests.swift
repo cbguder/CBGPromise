@@ -17,7 +17,7 @@ class PromiseTests: QuickSpec {
 
                 context("when the callbacks are registered before the promise is resolved") {
                     beforeEach {
-                        _ = subject.future.then { r in
+                        subject.future.then { r in
                             result = r
                         }
                     }
@@ -33,7 +33,7 @@ class PromiseTests: QuickSpec {
                     it("should call the callback when it's resolved") {
                         subject.resolve("My Special Value")
 
-                        _ = subject.future.then { r in
+                        subject.future.then { r in
                             result = r
                         }
 
@@ -70,8 +70,8 @@ class PromiseTests: QuickSpec {
                     var valA: String?
                     var valB: String?
 
-                    _ = subject.future.then { v in valA = v }
-                    _ = subject.future.then { v in valB = v }
+                    subject.future.then { v in valA = v }
+                    subject.future.then { v in valB = v }
 
                     subject.resolve("My Special Value")
 
@@ -103,7 +103,7 @@ class PromiseTests: QuickSpec {
                         return Int(str)
                     }
 
-                    _ = mappedFuture.then { num in
+                    mappedFuture.then { num in
                         mappedValue = num
                     }
 
@@ -121,7 +121,7 @@ class PromiseTests: QuickSpec {
                         return mappedPromise.future
                     }
 
-                    _ = mappedFuture.then { num in
+                    mappedFuture.then { num in
                         mappedValue = num
                     }
 

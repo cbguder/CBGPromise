@@ -11,6 +11,7 @@ public final class Promise<T> {
         future.resolve(value)
     }
 
+    @discardableResult
     public class func when<T>(_ futures: [Future<T>]) -> Future<[T]> {
         let promise = Promise<[T]>()
         var values: [T?] = futures.map { _ in nil }
@@ -18,7 +19,7 @@ public final class Promise<T> {
         var currentCount = 0
 
         for (idx, future) in futures.enumerated() {
-            _ = future.then {
+            future.then {
                 values[idx] = $0
                 currentCount += 1
                 if currentCount == futures.count {

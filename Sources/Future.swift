@@ -16,6 +16,12 @@ public final class Future<T> {
         completed = false
     }
 
+    public convenience init(resolved: T) {
+        self.init()
+
+        self.resolve(resolved)
+    }
+
     @discardableResult
     public func then(callback: @escaping (T) -> Void) -> Future<T> {
         callbacks.append(callback)

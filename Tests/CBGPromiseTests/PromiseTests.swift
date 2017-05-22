@@ -16,13 +16,11 @@ class PromiseTests: QuickSpec {
                 var result: String!
 
                 context("when the callbacks are registered before the promise is resolved") {
-                    beforeEach {
+                    it("should call the callback when it's resolved") {
                         subject.future.then { r in
                             result = r
                         }
-                    }
 
-                    it("should call the callback when it's resolved") {
                         subject.resolve("My Special Value")
 
                         expect(result).to(equal("My Special Value"))
@@ -84,11 +82,9 @@ class PromiseTests: QuickSpec {
 // see https://github.com/Quick/Nimble/blob/master/Sources/Nimble/Matchers/ThrowAssertion.swift
             describe("multiple resolving") {
                 context("resolving after having been resolved already") {
-                    beforeEach {
-                        subject.resolve("old")
-                    }
-
                     it("raises an exception") {
+                        subject.resolve("old")
+
                         expect { subject.resolve("new") }.to(throwAssertion())
                     }
                 }
@@ -129,6 +125,36 @@ class PromiseTests: QuickSpec {
                     mappedPromise.resolve(123)
 
                     expect(mappedValue).to(equal(123))
+                }
+            }
+
+            describe("cancelling") {
+                var result: String!
+
+                context("when the callbacks are registered before the promise is resolved") {
+                    it("should not call the callback when it's resolved") {
+                        subject.cancel()
+                        subject.future.then { r in
+                            result = r
+                        }
+
+                        subject.resolve("My Special Value")
+
+                        expect(result).to(beNil())
+                    }
+                }
+
+                context("when the callbacks are registered after the promise is resolved") {
+                    it("should not call the callback when it's resolved") {
+                        subject.cancel()
+                        subject.resolve("My Special Value")
+
+                        subject.future.then { r in
+                            result = r
+                        }
+
+                        expect(result).to(beNil())
+                    }
                 }
             }
 

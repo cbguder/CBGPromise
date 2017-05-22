@@ -5,6 +5,7 @@ public final class Future<T> {
     private var callbacks: [(T) -> Void]
 
     private var completed: Bool
+    private var cancelled: Bool
 
     public private(set) var value: T?
 
@@ -14,14 +15,17 @@ public final class Future<T> {
         semaphore = DispatchSemaphore(value: 0)
         callbacks = []
         completed = false
+        cancelled = false
     }
 
     @discardableResult
     public func then(callback: @escaping (T) -> Void) -> Future<T> {
         callbacks.append(callback)
 
-        if let value = value {
-            callback(value)
+        if !cancelled {
+            if let value = value {
+                callback(value)
+            }
         }
 
         return self
@@ -63,6 +67,11 @@ public final class Future<T> {
     func resolve(_ value: T) {
         precondition(!completed, "future is already resolved")
 
+        if cancelled {
+            semaphore.signal()
+            return
+        }
+
         completed = true
 
         self.value = value
@@ -72,5 +81,9 @@ public final class Future<T> {
         }
 
         semaphore.signal()
+    }
+
+    func cancel() {
+        self.cancelled = true
     }
 }

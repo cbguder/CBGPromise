@@ -29,4 +29,8 @@ public final class Promise<T> {
         }
         return promise.future
     }
+
+    public func cancel() {
+        self.future.cancel()
+    }
 }

@@ -3,7 +3,7 @@ import PackageDescription
 let package = Package(
     name: "CBGPromise",
     dependencies: [
-        .Package(url: "https://github.com/Quick/Quick", majorVersion: 1, minor: 1),
-        .Package(url: "https://github.com/Quick/Nimble", majorVersion: 6)
+        .Package(url: "https://github.com/Quick/Quick.git", majorVersion: 1, minor: 2),
+        .Package(url: "https://github.com/Quick/Nimble.git", majorVersion: 7)
     ]
 )

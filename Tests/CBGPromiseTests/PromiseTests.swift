@@ -160,5 +160,13 @@ class PromiseTests: QuickSpec {
                 }
             }
         }
+
+        describe("Future") {
+            it("can be init'd with a resolved value") {
+                let future = Future(resolved: "Hello")
+
+                expect(future.value).to(equal("Hello"))
+            }
+        }
     }
 }

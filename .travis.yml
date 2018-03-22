@@ -7,7 +7,7 @@ matrix:
         - PLATFORM=swiftpm
     - os: linux
       sudo: required
-      dist: trusty
+      dist: xenial
 install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then . ./ci/setup_linux.sh; fi
 script:

@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.5.0] - 2018-06-05
+### Added
+- Supports Swift 4
+
+### Changed
+- Tests rewritten for XCTest, removed dependency on Quick & Nimble
+
 ## [0.4.2] - 2017-03-29
 ### Changed
 - Can now discard result of all functions with return values (then, wait, map, when)
@@ -53,3 +60,4 @@
 [0.4.0]: https://github.com/cbguder/CBGPromise/compare/v0.3.1...v0.4.0
 [0.4.1]: https://github.com/cbguder/CBGPromise/compare/v0.4.0...v0.4.1
 [0.4.2]: https://github.com/cbguder/CBGPromise/compare/v0.4.1...v0.4.2
+[0.5.0]: https://github.com/cbguder/CBGPromise/compare/v0.4.2...v0.5.0

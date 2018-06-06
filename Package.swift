@@ -4,10 +4,22 @@ import PackageDescription
 let package = Package(
     name: "CBGPromise",
     products: [
-        .library(name: "CBGPromise", targets: ["CBGPromise"]),
+        .library(
+            name: "CBGPromise",
+            targets: ["CBGPromise"]
+        ),
     ],
     targets: [
-        .target(name: "CBGPromise", dependencies: [], path: "Sources")
+        .target(
+            name: "CBGPromise",
+            dependencies: [],
+            path: "Sources"
+        ),
+        .testTarget(
+            name: "CBGPromiseTests",
+            dependencies: ["CBGPromise"],
+            path: "Tests"
+        ),
     ],
     swiftLanguageVersions: [4]
 )

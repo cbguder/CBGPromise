@@ -2,4 +2,8 @@
 
 set -eux
 
-swift build && swift test
+export SWIFTENV_ROOT="$HOME/.swiftenv"
+export PATH="$SWIFTENV_ROOT/bin:$SWIFTENV_ROOT/shims:$PATH"
+
+swift build
+swift test

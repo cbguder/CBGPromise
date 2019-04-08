@@ -224,7 +224,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					4CAD83C81CC4651A00253CF4 = {
 						CreatedOnToolsVersion = 7.3;
@@ -246,10 +246,11 @@
 			};
 			buildConfigurationList = 4CAD83C11CC4650700253CF4 /* Build configuration list for PBXProject "CBGPromise" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4CAD83BD1CC4650700253CF4;
 			productRefGroup = 4CAD83CA1CC4651A00253CF4 /* Products */;
@@ -349,6 +350,7 @@
 		4CAD83C21CC4650700253CF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -382,6 +384,7 @@
 		4CAD83C31CC4650700253CF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;

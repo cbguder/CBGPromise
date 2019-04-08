@@ -2,7 +2,7 @@ version: 2
 jobs:
   ios:
     macos:
-      xcode: 9.3.1
+      xcode: 10.2.0
     environment:
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
@@ -17,7 +17,7 @@ jobs:
 
   mac:
     macos:
-      xcode: 9.3.1
+      xcode: 10.2.0
     environment:
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
@@ -32,7 +32,7 @@ jobs:
 
   mac-swiftpm:
     macos:
-      xcode: 9.3.1
+      xcode: 10.2.0
     environment:
       PLATFORM: swiftpm
     steps:

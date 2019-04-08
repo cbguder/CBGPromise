@@ -10,5 +10,5 @@ set +u
 eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
 set -u
 
-swiftenv install 4.1.2
-swiftenv global 4.1.2
+swiftenv install 5.0
+swiftenv global 5.0

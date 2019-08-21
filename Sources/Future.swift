@@ -17,11 +17,13 @@ public final class Future<T> {
     }
 
     @discardableResult
-    public func then(callback: @escaping (T) -> Void) -> Future<T> {
+    public func then(on: DispatchQueue = .main, callback: @escaping (T) -> Void) -> Future<T> {
         callbacks.append(callback)
 
         if let value = value {
-            callback(value)
+            on.async {
+                callback(value)
+            }
         }
 
         return self
@@ -34,33 +36,33 @@ public final class Future<T> {
     }
 
     @discardableResult
-    public func map<U>(_ transform: @escaping (T) -> U) -> Future<U> {
+    public func map<U>(on: DispatchQueue = .main, _ transform: @escaping (T) -> U) -> Future<U> {
         let mappedPromise = Promise<U>()
 
-        then { value in
+        then(on: on) { value in
             let mappedValue = transform(value)
-            mappedPromise.resolve(mappedValue)
+            mappedPromise.resolve(on: on, mappedValue)
         }
 
         return mappedPromise.future
     }
 
     @discardableResult
-    public func map<U>(_ transform: @escaping (T) -> Future<U>) -> Future<U> {
+    public func map<U>(on: DispatchQueue = .main, _ transform: @escaping (T) -> Future<U>) -> Future<U> {
         let mappedPromise = Promise<U>()
 
-        then { value in
+        then(on: on) { value in
             let mappedFuture = transform(value)
 
-            mappedFuture.then { mappedValue in
-                mappedPromise.resolve(mappedValue)
+            mappedFuture.then(on: on) { mappedValue in
+                mappedPromise.resolve(on: on, mappedValue)
             }
         }
 
         return mappedPromise.future
     }
 
-    func resolve(_ value: T) {
+    func resolve(on: DispatchQueue = .main, _ value: T) {
         precondition(!completed, "future is already resolved")
 
         completed = true
@@ -68,7 +70,9 @@ public final class Future<T> {
         self.value = value
 
         for callback in callbacks {
-            callback(value)
+            on.async {
+                callback(value)
+            }
         }
 
         semaphore.signal()
